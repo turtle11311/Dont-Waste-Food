@@ -1,0 +1,16 @@
+user {
+    account: 'turtle11311'
+    username: 'TurtleBee'
+    email: 'turtle11311@gmail.com'
+    tag: '台灣菜'
+    tag: '拉麵'
+}
+
+user {
+    account: 'Yeimaoz'
+    username: 'Li-Cheng Zheng'
+    email: 'ny8859884@gmail.com'
+    tag: '台灣菜'
+    tag: '義大利菜'
+    tag: '法國菜'
+}
