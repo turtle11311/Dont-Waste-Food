@@ -1,0 +1,172 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.dwf.dontwastefood.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TableRow
+            android:id="@+id/top"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/search"
+                android:layout_width="288dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:text="I'm looking for..."
+                android:textAlignment="center"
+                android:gravity="center_vertical" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/btn_star" />
+        </TableRow>
+
+        <ImageButton
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp" />
+
+        <TableRow
+            android:id="@+id/watch_more"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="112dp"
+                android:layout_height="wrap_content"
+                android:text="即期商品特賣"
+                android:layout_gravity="center_vertical" />
+
+            <Space
+                android:layout_width="145dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/RestingFood"
+                android:layout_width="117dp"
+                android:layout_height="36dp"
+                android:text="查看更多>>"
+                android:layout_gravity="right" />
+        </TableRow>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <TableRow
+                android:id="@+id/mini_food_bar"
+                android:layout_width="match_parent"
+                android:layout_height="78dp"></TableRow>
+
+            <TableRow
+                android:id="@+id/mini_food_names"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></TableRow>
+
+            <TableRow
+                android:id="@+id/mini_food_prices"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></TableRow>
+        </TableLayout>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="5dp">
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="112dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="精選食譜" />
+
+            <Space
+                android:layout_width="145dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/FinFood"
+                android:layout_width="117dp"
+                android:layout_height="36dp"
+                android:layout_gravity="right"
+                android:text="查看更多>>" />
+        </TableRow>
+
+        <TableLayout
+            android:id="@+id/stared_food"
+            android:layout_width="match_parent"
+            android:layout_height="372dp"
+            android:gravity="center_horizontal"></TableLayout>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="5dp">
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/Seasons"
+                android:layout_width="112dp"
+                android:layout_height="wrap_content"
+                android:text="季節推薦"
+                android:layout_gravity="center_vertical" />
+
+            <Space
+                android:layout_width="145dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/SeasonFood"
+                android:layout_width="117dp"
+                android:layout_height="36dp"
+                android:text="查看更多>>"
+                android:layout_gravity="right" />
+
+        </TableRow>
+
+        <TableLayout
+            android:id="@+id/season_food"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableLayout>
+    </LinearLayout>
+</ScrollView>
