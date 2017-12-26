@@ -24,7 +24,11 @@ class MainActivity : AppCompatActivity() {
             R.id.navigation_recipe -> {
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_profile -> {
+            R.id.navigation_member_centre -> {
+                transaction
+                        .replace(fragment_container.id, CustomerMemberCentreFragment.newInstance("", ""))
+                        .setTransition(FragmentTransaction.TRANSIT_ENTER_MASK)
+                        .commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_favorite -> {

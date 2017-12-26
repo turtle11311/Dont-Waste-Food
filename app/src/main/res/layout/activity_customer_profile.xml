@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dwf.dontwastefood.CustomerProfileActivity">
+
+    <ScrollView
+        android:id="@+id/PersonalInfoSV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/PersonalInfoL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="200sp"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="40sp" />
+
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/profile_image"
+                    android:layout_width="120sp"
+                    android:layout_height="120sp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/photo"
+                    app:civ_border_color="#FF000000"
+                    app:civ_border_width="2sp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="40sp" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20sp"
+                android:background="#ffffff" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:background="#7bffffff">
+
+                <Space
+                    android:layout_width="30sp"
+                    android:layout_height="40sp" />
+
+                <TextView
+                    android:layout_width="50sp"
+                    android:layout_height="40sp"
+                    android:gravity="start"
+                    android:text="帳號:"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/accountText"
+                    android:layout_width="300sp"
+                    android:layout_height="40sp"
+                    android:gravity="end"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="20sp" />
+            </TableRow>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20sp"
+                android:background="#ffffff" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:background="#7bffffff">
+
+                <Space
+                    android:layout_width="30sp"
+                    android:layout_height="40sp" />
+
+                <TextView
+                    android:id="@+id/un1"
+                    android:layout_width="50sp"
+                    android:layout_height="40sp"
+                    android:gravity="left"
+                    android:text="名字:"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/usernameText"
+                    android:layout_width="300sp"
+                    android:layout_height="40sp"
+                    android:gravity="right"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="20sp" />
+            </TableRow>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20sp"
+                android:background="#ffffff" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:background="#7bffffff">
+
+                <Space
+                    android:layout_width="30sp"
+                    android:layout_height="40sp" />
+
+                <TextView
+                    android:id="@+id/em1"
+                    android:layout_width="50sp"
+                    android:layout_height="40sp"
+                    android:gravity="left"
+                    android:text="信箱:"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/emailText"
+                    android:layout_width="300sp"
+                    android:layout_height="40sp"
+                    android:gravity="right"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="20sp" />
+            </TableRow>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20sp"
+                android:background="#ffffff" />
+
+            <TableRow
+                android:id="@+id/favorite"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:background="#7bffffff">
+
+                <Space
+                    android:layout_width="30sp"
+                    android:layout_height="40sp" />
+
+                <TextView
+                    android:layout_width="50sp"
+                    android:layout_height="40sp"
+                    android:gravity="left"
+                    android:text="喜好:"
+                    android:textSize="20sp" />
+
+            </TableRow>
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
