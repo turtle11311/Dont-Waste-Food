@@ -32,7 +32,6 @@ import java.util.regex.Pattern
  * A login screen that offers login via email/password.
  */
 class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
-    val EXTRA_EMAIL: String = "EXTRA_EMAIL"
     var userList: List<UserModel.User>? = null
 
     private var mEmailPattern: Pattern? = null
@@ -225,28 +224,27 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
      * Represents an asynchronous login/registration task used to authenticate
      * the user.
      */
-    inner class UserLoginTask internal constructor(private val mEmail: String, private val mPassword: String) : AsyncTask<Void, Void, Boolean>() {
+    inner class UserLoginTask internal constructor(private val mEmail: String, private val mPassword: String) : AsyncTask<Void, Void, UserModel.User?>() {
 
-        override fun doInBackground(vararg params: Void): Boolean {
+        override fun doInBackground(vararg params: Void): UserModel.User? {
             try {
                 // Simulate network access.
-                Thread.sleep(2000)
+                Thread.sleep(1000)
             } catch (e: InterruptedException) {
-                return false
+                return null
             }
 
             return userList
-                    ?.map { it.email }
-                    ?.firstOrNull { it == mEmail } != null
+                    ?.firstOrNull { it.email == mEmail }
         }
 
-        override fun onPostExecute(success: Boolean?) {
+        override fun onPostExecute(user: UserModel.User?) {
             mAuthTask = null
             showProgress(false)
 
-            if (success!!) {
+            if (user != null) {
                 val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                intent.putExtra(EXTRA_EMAIL, mEmail)
+                intent.putExtra(EXTRA_USER, user)
                 startActivity(intent)
                 finish()
             } else {
@@ -264,7 +262,7 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
     }
 
     companion object {
-
+        val EXTRA_USER = "EXTRA_USER"
         /**
          * Id to identity READ_CONTACTS permission request.
          */

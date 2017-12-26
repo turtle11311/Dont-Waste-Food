@@ -5,9 +5,11 @@ import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AppCompatActivity
+import com.dwf.dontwastefood.proto.UserModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
 
     private val fragmentManager: FragmentManager = supportFragmentManager
 
@@ -44,6 +46,8 @@ class MainActivity : AppCompatActivity() {
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
+        mUser = intent.getSerializableExtra(LoginActivity.EXTRA_USER) as UserModel.User?
+
         fragmentManager.beginTransaction()
                 .replace(fragment_container.id, HomeFragment.newInstance("", ""))
                 .setTransition(FragmentTransaction.TRANSIT_ENTER_MASK)
@@ -52,5 +56,6 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         private val TAG = "MainActivity"
+        var mUser: UserModel.User? = null
     }
 }

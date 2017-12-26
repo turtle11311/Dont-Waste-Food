@@ -15,7 +15,6 @@ import android.widget.Button
 import android.widget.Space
 import android.widget.TableRow
 import kotlinx.android.synthetic.main.activity_customer_profile.*
-import java.util.*
 
 
 class CustomerProfileActivity : AppCompatActivity() {
@@ -26,16 +25,15 @@ class CustomerProfileActivity : AppCompatActivity() {
 
         val scale = resources.displayMetrics.density
 
-        accountText.text = "Yeimaoz"
-        usernameText.text = "Li-Cheng Zheng"
-        emailText.text = "ny8859884@gmail.com"
+        accountText.text = MainActivity.mUser?.account
+        usernameText.text = MainActivity.mUser?.username
+        emailText.text = MainActivity.mUser?.email
+        var tags = MainActivity.mUser?.tagList
 
-
-
-        for (i in 0 until tags.size) {
+        for (i in 0 until tags!!.size) {
             // spacing
             val sp = Space(this)
-            sp.setId(i)
+            sp.id = i
             sp.layoutParams = TableRow.LayoutParams(50, 100)
 
             val btn = Button(this)
@@ -95,7 +93,6 @@ class CustomerProfileActivity : AppCompatActivity() {
 
     companion object {
         private val TAG = "CustomerProfileActivity"
-        private var tags = Arrays.asList("台灣菜", "義大利菜", "法國菜")
     }
 }
 
