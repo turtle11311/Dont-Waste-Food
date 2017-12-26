@@ -5,10 +5,11 @@ import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import com.dwf.dontwastefood.proto.UserModel
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), RecipeCategoryFragment.OnListFragmentInteractionListener {
 
 
     private val fragmentManager: FragmentManager = supportFragmentManager
@@ -24,6 +25,10 @@ class MainActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_recipe -> {
+                transaction
+                        .replace(fragment_container.id, RecipeCategoryFragment.newInstance())
+                        .setTransition(FragmentTransaction.TRANSIT_ENTER_MASK)
+                        .commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_member_centre -> {
@@ -52,6 +57,10 @@ class MainActivity : AppCompatActivity() {
                 .replace(fragment_container.id, HomeFragment.newInstance("", ""))
                 .setTransition(FragmentTransaction.TRANSIT_ENTER_MASK)
                 .commit()
+    }
+
+    override fun onRecipeCategorySelect(item: RecipeCategory?) {
+        Log.d(TAG, item?.name)
     }
 
     companion object {
