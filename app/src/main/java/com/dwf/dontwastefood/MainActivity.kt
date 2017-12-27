@@ -1,5 +1,7 @@
 package com.dwf.dontwastefood
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.FragmentManager
@@ -9,7 +11,9 @@ import android.util.Log
 import com.dwf.dontwastefood.proto.UserModel
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), RecipeCategoryFragment.OnListFragmentInteractionListener {
+class MainActivity : AppCompatActivity(),
+        RecipeCategoryFragment.OnListFragmentInteractionListener,
+        HomeFragment.OnFragmentInteractionListener {
 
 
     private val fragmentManager: FragmentManager = supportFragmentManager
@@ -61,6 +65,11 @@ class MainActivity : AppCompatActivity(), RecipeCategoryFragment.OnListFragmentI
 
     override fun onRecipeCategorySelect(item: RecipeCategory?) {
         Log.d(TAG, item?.name)
+    }
+
+    override fun onRecipeClicked(uri: Uri) {
+        val intent = Intent(this@MainActivity, RecipeActivity::class.java)
+        startActivity(intent)
     }
 
     companion object {

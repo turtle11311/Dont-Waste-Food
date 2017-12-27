@@ -44,6 +44,10 @@ class HomeFragment : Fragment() {
             val imageView: ImageButton = view.findViewById(R.id.imageView)
             imageView.setImageResource(R.drawable.food_bar1)
 
+            imageView.setOnClickListener {
+                mListener?.onRecipeClicked(Uri.EMPTY)
+            }
+
             // mini_food bar
             val tr_pic: TableRow = view.findViewById(R.id.mini_food_bar)
             val tr_name: TableRow = view.findViewById(R.id.mini_food_names)
@@ -140,7 +144,7 @@ class HomeFragment : Fragment() {
     // TODO: Rename method, update argument and hook method into UI event
     fun onButtonPressed(uri: Uri) {
         if (mListener != null) {
-            mListener!!.onFragmentInteraction(uri)
+            mListener?.onRecipeClicked(uri)
         }
     }
 
@@ -168,8 +172,7 @@ class HomeFragment : Fragment() {
      * See the Android Training lesson [Communicating with Other Fragments](http://developer.android.com/training/basics/fragments/communicating.html) for more information.
      */
     interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        fun onFragmentInteraction(uri: Uri)
+        fun onRecipeClicked(uri: Uri)
     }
 
     companion object {
